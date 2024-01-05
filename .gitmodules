@@ -1,3 +1,6 @@
 [submodule "url-shortener-frontend"]
 	path = url-shortener-frontend
 	url = git@github.com:obabawale/url-shortener-frontend.git
+[submodule "url-shortener-backend"]
+	path = url-shortener-backend
+	url = git@github.com:obabawale/url-shortener-backend.git
