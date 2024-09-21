@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shortener-backend
+spec:
+  selector:
+    app: shortener-backend
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shortener-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shortener-backend
+  template:
+    metadata:
+      labels:
+        app: shortener-backend
+    spec:
+      containers:
+        - name: shortener-backend
+          image: lekanbabawale/shortener-backend:1.0
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
